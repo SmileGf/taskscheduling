@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: dfv  # 控制代码环境
+#mybatis
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  type-aliases-package: cn.com.ocj.test.vo           # 用于对类型进行别名控制  包下面类全部可以用别名(全部小写)
+  mapper-locations: classpath:mapper/*/*.xml

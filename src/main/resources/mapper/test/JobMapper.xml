@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="cn.com.ocj.test.dao.JobAndTriggerMapper" >
+    <select id="ggg"  resultType="cn.com.ocj.test.vo.JobAndTrigger">
+        SELECT
+            q.JOB_NAME as JOB_NAME,
+            q.JOB_GROUP as JOB_GROUP,
+            q.JOB_CLASS_NAME,
+            qt.TRIGGER_NAME,
+            qt.TRIGGER_GROUP,
+            qct.CRON_EXPRESSION,
+            qct.TIME_ZONE_ID
+        FROM
+            QRTZ_JOB_DETAILS q  JOIN QRTZ_TRIGGERS qt JOIN QRTZ_CRON_TRIGGERS qct
+    </select>
+
+</mapper>

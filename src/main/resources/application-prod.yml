@@ -1,0 +1,12 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    # 普通配置文件数据库连接
+     url: jdbc:mysql://47.97.162.216:3306/dfcj_batch?useUnicode=true&characterEncoding=utf8&serverTimezone=PRC&useSSL=false&rewriteBatchedStatements=TRUE&autoReconnect=true&allowMultiQueries=true
+     username: root
+     password: yA^Nsn1v
+     driver-class-name: com.mysql.jdbc.Driver
+  quartz:
+    jdbc:
+      schema:
