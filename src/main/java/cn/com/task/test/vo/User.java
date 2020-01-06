@@ -1,4 +1,4 @@
-package cn.com.ocj.test.vo;
+package cn.com.task.test.vo;
 
 public class User {
 	private int id;

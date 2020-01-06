@@ -1,7 +1,7 @@
-package cn.com.ocj.test.service;
+package cn.com.task.test.service;
 
-import cn.com.ocj.test.vo.JobAndTrigger;
 
+import cn.com.task.test.vo.JobAndTrigger;
 
 public interface JobAndTriggerService {
 

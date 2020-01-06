@@ -1,8 +1,10 @@
-package cn.com.ocj.test.dao;
+package cn.com.task.test.dao;
 
-import cn.com.ocj.test.vo.User;
+import cn.com.task.test.vo.User;
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface UserMapper {
 
     User queryUser(@Param(value = "name")String  name) throws  Exception;

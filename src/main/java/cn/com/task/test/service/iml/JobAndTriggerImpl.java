@@ -1,8 +1,8 @@
-package cn.com.ocj.test.service.Imp;
+package cn.com.task.test.service.iml;
 
-import cn.com.ocj.test.dao.JobAndTriggerMapper;
-import cn.com.ocj.test.service.JobAndTriggerService;
-import cn.com.ocj.test.vo.JobAndTrigger;
+import cn.com.task.test.dao.JobAndTriggerMapper;
+import cn.com.task.test.service.JobAndTriggerService;
+import cn.com.task.test.vo.JobAndTrigger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

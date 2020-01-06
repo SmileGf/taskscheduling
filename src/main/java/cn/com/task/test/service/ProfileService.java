@@ -1,4 +1,4 @@
-package cn.com.ocj.test.service;
+package cn.com.task.test.service;
 
 public interface ProfileService {
 

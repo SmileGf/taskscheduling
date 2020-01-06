@@ -1,4 +1,4 @@
-package cn.com.ocj.test;
+package cn.com.task.test;
 
 import org.quartz.Job;
 import org.quartz.JobExecutionContext;

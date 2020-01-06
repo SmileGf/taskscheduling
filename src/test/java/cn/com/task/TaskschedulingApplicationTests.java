@@ -1,4 +1,4 @@
-package cn.com.ocj;
+package cn.com.task;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

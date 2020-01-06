@@ -1,8 +1,7 @@
-package cn.com.ocj.test.controller;
+package cn.com.task.test.controller;
 
-import cn.com.ocj.test.dao.UserMapper;
-//import cn.com.ocj.test.service.ProfileService;
-import cn.com.ocj.test.vo.User;
+import cn.com.task.test.dao.UserMapper;
+import cn.com.task.test.vo.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,4 +1,4 @@
-package cn.com.ocj.test;
+package cn.com.task.test;
 
 import java.io.IOException;
 import java.util.Properties;

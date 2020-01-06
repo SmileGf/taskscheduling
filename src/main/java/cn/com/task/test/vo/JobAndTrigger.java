@@ -1,4 +1,4 @@
-package cn.com.ocj.test.vo;
+package cn.com.task.test.vo;
 
 import java.math.BigInteger;
 

@@ -1,4 +1,4 @@
-package cn.com.ocj.util;
+package cn.com.task.util;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

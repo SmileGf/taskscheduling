@@ -1,4 +1,4 @@
-package cn.com.ocj;
+package cn.com.task;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
  * @SpringbootApplication  = @Configuration + @EnableAutoConfiguration + @ComponentScan
  */
 @SpringBootApplication
-@ComponentScan("cn.com.ocj.test")
+@ComponentScan("cn.com.task.test")
 @MapperScan("cn.com.ocj.test.dao")
 public class TaskschedulingApplication extends SpringBootServletInitializer  {
         public static void main(String[] args) {

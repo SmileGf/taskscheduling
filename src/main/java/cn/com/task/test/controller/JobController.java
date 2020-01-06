@@ -1,8 +1,8 @@
-package cn.com.ocj.test.controller;
+package cn.com.task.test.controller;
 
-import cn.com.ocj.test.BaseJob;
-import cn.com.ocj.test.service.JobAndTriggerService;
-import cn.com.ocj.test.vo.JobAndTrigger;
+import cn.com.task.test.BaseJob;
+import cn.com.task.test.service.JobAndTriggerService;
+import cn.com.task.test.vo.JobAndTrigger;
 import org.quartz.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+/**
+ *  job
+ * @author gongguifang
+ * @date 2019/12/31 10:24
+ */
 //@RestController
 //@RequestMapping(value="/job")
 public class JobController {
@@ -20,7 +24,9 @@ public class JobController {
     @Autowired
     private JobAndTriggerService JobAndTriggerService;
 
-    //加入Qulifier注解，通过名称注入bean
+    /**
+     * 加入Qulifier注解，通过名称注入bean
+     */
     @Autowired
     @Qualifier("Scheduler")
     private Scheduler scheduler;
@@ -32,7 +38,13 @@ public class JobController {
         return "job   傻逼springboot";
     }
 
-    //添加
+    /**
+     * 添加
+     * @param jobClassName
+     * @param jobGroupName
+     * @param cronExpression
+     * @throws Exception
+     */
     @PostMapping(value="/addjob")
     public void addjob(@RequestParam(value="jobClassName")String jobClassName, @RequestParam(value="jobGroupName")String jobGroupName,
                        @RequestParam(value="cronExpression")String cronExpression) throws Exception {
@@ -56,14 +68,18 @@ public class JobController {
 
         try {
             scheduler.scheduleJob(jobDetail, trigger);
-
         } catch (SchedulerException e) {
             System.out.println("创建定时任务失败"+e);
             throw new Exception("创建定时任务失败");
         }
     }
 
-    //暂停
+    /**
+     * 暂停
+     * @param jobClassName
+     * @param jobGroupName
+     * @throws Exception
+     */
     @PostMapping(value="/pausejob")
     public void pausejob(@RequestParam(value="jobClassName")String jobClassName, @RequestParam(value="jobGroupName")String jobGroupName) throws Exception {
         jobPause(jobClassName, jobGroupName);
@@ -73,7 +89,12 @@ public class JobController {
         scheduler.pauseJob(JobKey.jobKey(jobClassName, jobGroupName));
     }
 
-    //恢复
+    /**
+     * 恢复
+     * @param jobClassName
+     * @param jobGroupName
+     * @throws Exception
+     */
     @PostMapping(value="/resumejob")
     public void resumejob(@RequestParam(value="jobClassName")String jobClassName, @RequestParam(value="jobGroupName")String jobGroupName) throws Exception {
         jobresume(jobClassName, jobGroupName);
@@ -83,7 +104,13 @@ public class JobController {
         scheduler.resumeJob(JobKey.jobKey(jobClassName, jobGroupName));
     }
 
-    //改期
+    /**
+     * 改期
+     * @param jobClassName
+     * @param jobGroupName
+     * @param cronExpression
+     * @throws Exception
+     */
     @PostMapping(value="/reschedulejob")
     public void rescheduleJob(@RequestParam(value="jobClassName")String jobClassName, @RequestParam(value="jobGroupName")String jobGroupName,
                               @RequestParam(value="cronExpression")String cronExpression) throws Exception  {
@@ -109,7 +136,12 @@ public class JobController {
         }
     }
 
-    //删除
+    /**
+     * 删除
+     * @param jobClassName
+     * @param jobGroupName
+     * @throws Exception
+     */
     @PostMapping(value="/deletejob")
     public void deletejob(@RequestParam(value="jobClassName")String jobClassName, @RequestParam(value="jobGroupName")String jobGroupName) throws Exception {
         jobdelete(jobClassName, jobGroupName);
@@ -122,7 +154,10 @@ public class JobController {
     }
 
 
-    //查询
+    /**
+     * 查询
+     * @return
+     */
     @GetMapping(value="/queryjob")
     public Map<String, Object> queryjob(){
         JobAndTrigger jobAndTrigger = JobAndTriggerService.getJobAndTriggerDetails();
