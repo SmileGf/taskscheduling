@@ -1,7 +1,11 @@
 #idea File
 .mvn/
-.idea/
 target/
 mvnw
 mvnw.cmd
-.iml
+
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
