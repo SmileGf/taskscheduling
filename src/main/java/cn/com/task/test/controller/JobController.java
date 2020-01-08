@@ -17,7 +17,7 @@ import java.util.Map;
  * @author gongguifang
  * @date 2019/12/31 10:24
  */
-//@RestController
+@RestController
 //@RequestMapping(value="/job")
 public class JobController {
 
@@ -28,15 +28,11 @@ public class JobController {
      * 加入Qulifier注解，通过名称注入bean
      */
     @Autowired
-    @Qualifier("Scheduler")
+//    @Qualifier("Scheduler")
     private Scheduler scheduler;
 
     private static Logger log = LoggerFactory.getLogger(JobController.class);
 
-    @RequestMapping("/jovhello")
-    public String hello() {
-        return "job   傻逼springboot";
-    }
 
     /**
      * 添加

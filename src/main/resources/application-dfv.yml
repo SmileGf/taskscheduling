@@ -1,12 +1,38 @@
 server:
-  port: 8082
+  port: 8080
 spring:
   datasource:
     # 普通配置文件数据库连接
-     url: jdbc:mysql://47.97.162.216:3306/dfcj_batch?useUnicode=true&characterEncoding=utf8&serverTimezone=PRC&useSSL=false&rewriteBatchedStatements=TRUE&autoReconnect=true&allowMultiQueries=true
+     url: jdbc:mysql://30.21.134.9:3306/fia_file_data?useUnicode=true&characterEncoding=utf8&serverTimezone=PRC&useSSL=false&rewriteBatchedStatements=TRUE&autoReconnect=true&allowMultiQueries=true
      username: root
-     password: yA^Nsn1v
+     password: 123456
      driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    database: MYSQL
+    show-sql: true
+  # quartz 相关配置属性
   quartz:
-    jdbc:
-      schema:
+    properties:
+      org:
+        quartz:
+          scheduler:
+            instanceName: DefaultQuartzScheduler
+            instanceId: AUTO
+          jobStore:
+              class: org.quartz.impl.jdbcjobstore.JobStoreTX
+              driverDelegateClass: org.quartz.impl.jdbcjobstore.StdJDBCDelegate
+              tablePrefix: QRTZ_
+              isClustered: false
+              clusterCheckinInterval: 10000
+              useProperties: true
+          threadPool:
+              class: org.quartz.simpl.SimpleThreadPool
+              threadCount: 10
+              threadPriority: 5
+              threadsInheritContextClassLoaderOfInitializingThread: true
+          dataSource:
+              default:
+                URL: jdbc:mysql://localhost:3306/aipyun?characterEncoding=utf-8
+                user: root
+                password: root123
+                driver: com.mysql.jdbc.Driver
