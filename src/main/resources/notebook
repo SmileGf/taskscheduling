@@ -49,5 +49,5 @@
 # logging:
 #  config: classpath:logback.xml
 #  level:
-#    cn.com.ocj: DEBUG   # 日志级别控制前缀，*为包名或Logger名  选项TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF
+#    cn.com.cj: DEBUG   # 日志级别控制前缀，*为包名或Logger名  选项TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF
 
